@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>九巷老成都鲜货串串 · 围挡营销方案</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#C62828;--red-light:#FFE8E8;
+  --dark:#3E2723;--dark-light:#EFEBE9;
+  --gold:#F4A100;--gold-light:#FFF3D6;
+  --orange:#E86A17;
+  --cream:#FFFBF5;
+  --text:#2D2D2D;--text-light:#777;--white:#FFF;
+  --shadow:0 2px 20px rgba(0,0,0,0.06);--radius:14px;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--cream);color:var(--text);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  padding:0 16px;height:52px;display:flex;align-items:center;
+  overflow-x:auto;scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{
+  white-space:nowrap;font-size:13px;color:var(--text-light);
+  text-decoration:none;padding:6px 12px;margin:0 2px;
+  border-radius:8px;transition:all .2s;flex-shrink:0;font-weight:500;
+}
+nav a:hover,nav a.active{color:var(--red);background:var(--red-light)}
+.hero{
+  padding:80px 20px 48px;text-align:center;
+  background:linear-gradient(160deg,#3E2723 0%,#5D4037 40%,#8D6E63 100%);
+  color:#FFF;position:relative;overflow:hidden;
+  min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+}
+.hero::before{
+  content:'🍢🌶️🔥🥟🍺';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);font-size:180px;opacity:0.05;
+  letter-spacing:40px;pointer-events:none;
+}
+.hero .badge{
+  display:inline-block;background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(4px);padding:6px 18px;border-radius:20px;
+  font-size:12px;letter-spacing:2px;margin-bottom:20px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+.hero h1{font-size:clamp(32px,6vw,50px);font-weight:800;letter-spacing:2px;}
+.hero h1 span{color:var(--gold);}
+.hero .sub{font-size:clamp(14px,2vw,18px);opacity:.85;margin:10px 0 20px;font-weight:300;}
+.hero .tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px;}
+.hero .tags span{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);
+  padding:5px 12px;border-radius:16px;font-size:11px;
+}
+.hero .scroll-hint{margin-top:30px;animation:bounce 2s infinite;font-size:20px;opacity:.4;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.container{max-width:800px;margin:0 auto;padding:0 20px;}
+.scene{padding:44px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+.scene:last-child{border-bottom:none}
+.scene-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.scene-num{font-size:11px;font-weight:700;letter-spacing:2px;padding:3px 12px;border-radius:4px}
+.scene-num.red{background:var(--red-light);color:var(--red)}
+.scene-num.gold{background:var(--gold-light);color:#A67C00}
+.scene-num.orange{background:#FFF0E0;color:var(--orange)}
+.scene-num.dark{background:var(--dark-light);color:var(--dark)}
+.scene-title{font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.3}
+.scene-title em{font-style:normal;color:var(--red)}
+.scene-title em.gold{color:var(--gold)}
+.s-divider{width:50px;height:3px;border-radius:2px;margin:10px 0 14px}
+.s-divider.red{background:var(--red)}
+.s-divider.gold{background:var(--gold)}
+.scene-card{background:var(--white);border-radius:var(--radius);padding:22px 20px;margin-bottom:12px;box-shadow:var(--shadow)}
+.scene-card:last-child{margin-bottom:0}
+.scene-card .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:3px;margin-bottom:8px;letter-spacing:1px}
+.scene-card .tag.idea{background:var(--red-light);color:var(--red)}
+.scene-card .tag.exec{background:#E8F5E9;color:#2D6A4F}
+.scene-card .tag.result{background:var(--gold-light);color:#A67C00}
+.scene-card h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px}
+.scene-card p,.scene-card li{font-size:14px;color:#555;line-height:1.8}
+.scene-card ul{padding-left:18px;margin:6px 0}
+.scene-card ul li{margin-bottom:4px}
+.scene-card ul li::marker{color:var(--red)}
+.highlight{padding:16px 18px;border-radius:10px;border-left:3px solid var(--red);font-size:14px;color:#444;margin:14px 0}
+.highlight.gold{border-left-color:var(--gold);background:var(--gold-light)}
+.highlight.red{border-left-color:var(--red);background:var(--red-light)}
+.highlight.dark{border-left-color:var(--dark);background:var(--dark-light)}
+.highlight strong{color:var(--text)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+.timeline{position:relative;padding-left:28px;margin:14px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#E0D0D0}
+.tl-item{position:relative;padding:0 0 16px 16px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--gold);border:2px solid var(--cream);box-shadow:0 0 0 2px var(--gold)}
+.tl-item.red::before{background:var(--red);box-shadow:0 0 0 2px var(--red)}
+.tl-item.dark::before{background:var(--dark);box-shadow:0 0 0 2px var(--dark)}
+.tl-item h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px}
+.tl-item p{font-size:13px;color:#666;line-height:1.6}
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:10px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white)}
+th{padding:11px 13px;text-align:left;font-weight:700;font-size:12px;letter-spacing:1px;background:var(--red);color:#FFF}
+th.gold{background:var(--gold);color:#3E2723}
+td{padding:10px 13px;border-bottom:1px solid #F0EDE8;color:#555}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#FAFAFA}
+.budget-bar{display:flex;height:24px;border-radius:12px;overflow:hidden;margin:12px 0;font-size:10px;font-weight:700;color:#FFF}
+.budget-bar .seg{display:flex;align-items:center;justify-content:center;letter-spacing:1px}
+.budget-bar .s1{background:var(--red);flex:3}
+.budget-bar .s2{background:var(--dark);flex:2.5}
+.budget-bar .s3{background:var(--gold);flex:2}
+.budget-bar .s4{background:var(--orange);flex:1.5}
+.budget-bar .s5{background:#2D6A4F;flex:1}
+.fence-design{background:var(--dark);color:#FFF;border-radius:var(--radius);padding:0;overflow:hidden;margin:14px 0}
+.fence-design .top-bar{background:var(--red);padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:2px;text-align:center}
+.fence-design .content{padding:20px 18px}
+.fence-design .content h4{font-size:18px;font-weight:800;margin-bottom:4px;color:var(--gold);letter-spacing:3px}
+.fence-design .content .subtitle{font-size:13px;opacity:.7;margin-bottom:12px}
+.fence-design .content .feature{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.fence-design .content .feature span{
+  background:rgba(255,255,255,0.1);padding:4px 10px;border-radius:4px;font-size:11px;border:1px solid rgba(255,255,255,0.08);
+}
+.fence-design .content .qr-area{
+  background:rgba(255,255,255,0.06);border-radius:8px;padding:12px;text-align:center;font-size:13px;line-height:1.6;
+}
+.fence-design .content .qr-area strong{color:var(--gold);font-size:16px}
+.fence-design .bottom-bar{background:var(--dark-light);color:var(--dark);padding:8px 14px;font-size:11px;text-align:center}
+.footer{text-align:center;padding:32px 20px;color:#AAA;font-size:12px;letter-spacing:1px;border-top:1px solid rgba(0,0,0,0.04)}
+@media(max-width:600px){.hero{padding:70px 16px 36px;min-height:55vh}.scene{padding:34px 0}.scene-card{padding:18px 16px}nav a{font-size:12px;padding:5px 10px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#why">为什么做</a>
+  <a href="#fence">围挡设计</a>
+  <a href="#hooks">引流钩子</a>
+  <a href="#online">线上预热</a>
+  <a href="#timeline">时间线</a>
+  <a href="#budget">预算</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">🍢 围挡营销 · 开业蓄水方案</div>
+  <h1>九巷老成都<span>鲜货串串</span></h1>
+  <div class="sub">生态城·汇金广场 · 老成都串串香 · 围挡期营销全案</div>
+  <div class="tags">
+    <span>📍 生态城汇金广场</span>
+    <span>🍢 老成都串串香</span>
+    <span>🎯 围挡提前蓄水</span>
+    <span>🔥 开业引爆</span>
+  </div>
+  <div class="scroll-hint">⌄</div>
+</div>
+
+<div class="container">
+
+<!-- 01 为什么做围挡 -->
+<div class="scene" id="why">
+  <div class="scene-header"><span class="scene-num red">01</span></div>
+  <h2 class="scene-title">为什么要做围挡营销 · <em>装修期不能闲着</em></h2>
+  <div class="s-divider red"></div>
+
+  <div class="grid-2">
+    <div class="scene-card">
+      <span class="tag idea">🤔 老板可能会想</span>
+      <p>"装修围挡不就是挡住灰尘吗？随便弄个喷绘布盖上就行了。"<br><br>
+      <strong>错！</strong>围挡是开店前唯一的广告位。汇金广场每天路过的人流量，装修期1-2个月白白流失，就是损失了几千个潜在客户的曝光机会。</p>
+    </div>
+    <div class="scene-card">
+      <span class="tag result">🎯 围挡营销的核心目标</span>
+      <p>
+      <strong>1. 提前建立品牌认知</strong> — 路过的人看到围挡就知道"这里要开一家老成都串串"<br><br>
+      <strong>2. 开业前蓄水</strong> — 扫码加群/收藏打卡，开业当天直接激活<br><br>
+      <strong>3. 制造期待感</strong> — "什么时候开业？"让人问了就成功了<br><br>
+      <strong>4. 同商业体互相导流</strong> — 跟朱姥爷烧烤同一个汇金广场，围挡就能互相带客
+      </p>
+    </div>
+  </div>
+
+  <div class="highlight gold">
+    <strong>🎯 九巷的资源优势：</strong><br>
+    • 汇金广场是新商业体，周边生态城小区多（青溪花苑、水木清华等）<br>
+    • 同广场有朱姥爷烧烤，串串+烧烤互相导流，围挡上就能互相打广告<br>
+    • 老成都串串这个品类在生态城有差异化——附近有烧烤、火锅，但专门做老成都串串的少<br>
+    • 定位「鲜货」——食材新鲜是核心卖点，围挡上就要打出来
+  </div>
+</div>
+
+<!-- 02 围挡视觉设计 -->
+<div class="scene" id="fence">
+  <div class="scene-header"><span class="scene-num dark">02</span></div>
+  <h2 class="scene-title">围挡视觉设计 · <em class="gold">老成都·市井·烟火气</em></h2>
+  <div class="s-divider gold"></div>
+
+  <div class="fence-design">
+    <div class="top-bar">🔥 围挡设计方案 🔥</div>
+    <div class="content">
+      <h4>九巷老成都鲜货串串</h4>
+      <div class="subtitle">JIUXIANG · CHENGDU STREET FOOD</div>
+      <div class="feature">
+        <span>🍢 鲜货现串</span>
+        <span>🌶️ 老成都锅底</span>
+        <span>🔥 市井烟火气</span>
+        <span>🥟 手工小吃</span>
+        <span>🍺 精酿啤酒</span>
+      </div>
+      <div style="border-top:1px dashed rgba(255,255,255,0.15);margin:10px 0;padding:8px 0;display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:var(--red);color:#FFF;padding:2px 8px;border-radius:3px;font-size:11px;">⏳ 开业倒计时 XX 天</span>
+        <span style="background:var(--gold);color:#3E2723;padding:2px 8px;border-radius:3px;font-size:11px;">🎫 扫码领¥5串串券</span>
+      </div>
+      <div class="qr-area">
+        <div style="font-size:24px;margin-bottom:6px;">📱</div>
+        <strong>扫码收藏打卡 · 开业享5折</strong><br>
+        <span style="font-size:12px;opacity:.7;">提前加群 · 每日抽奖送串串套餐</span>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;">
+        <span style="background:rgba(255,255,255,0.08);padding:4px 10px;border-radius:4px;font-size:11px;">📍 汇金广场1层</span>
+        <span style="background:rgba(255,255,255,0.08);padding:4px 10px;border-radius:4px;font-size:11px;">📞 13XXXXXXX</span>
+      </div>
+    </div>
+    <div class="bottom-bar">🎨 老成都市井风 · 红+黑+金配色 · 复古霓虹灯牌效果</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:10px;">
+    <div class="scene-card">
+      <h3>🎨 设计风格建议</h3>
+      <p>
+      <strong>主色调：</strong>中国红 #C62828 + 深木色 #3E2723<br>
+      <strong>点缀色：</strong>金色 #F4A100 + 暖白 #FFFBF5<br>
+      <strong>风格：</strong>老成都市井风 · 复古 · 烟火气<br>
+      <strong>字体：</strong>书法体（标题）+ 宋体（正文）</p>
+      <p style="margin-top:8px;"><strong>视觉元素：</strong><br>
+      • 大红灯笼、竹签、辣椒、火锅蒸汽<br>
+      • 老成都老街景插画（宽窄巷子风）<br>
+      • 竹编蒸笼、搪瓷杯、老式牌匾<br>
+      • 霓虹灯效果的店名发光字</p>
+    </div>
+    <div class="scene-card">
+      <h3>📐 围挡内容布局</h3>
+      <p>
+      <strong>上方（1/3）：</strong>品牌名+品类+视觉主图<br>
+      — 大字：九巷老成都鲜货串串<br>
+      — 副标题：地道老成都味 · 鲜货现串<br><br>
+      <strong>中间（1/3）：</strong>引流钩子区<br>
+      — 开业倒计时<br>
+      — 扫码收藏打卡福利<br>
+      — 微信群二维码<br><br>
+      <strong>下方（1/3）：</strong>信息区<br>
+      — 地址+电话<br>
+      — 开业时间预告<br>
+      — 朱姥爷烧烤联合推荐（互相导流）
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 03 引流钩子 -->
+<div class="scene" id="hooks">
+  <div class="scene-header"><span class="scene-num red">03</span></div>
+  <h2 class="scene-title">围挡上的引流钩子 · <em>让人停下来扫码</em></h2>
+  <div class="s-divider red"></div>
+
+  <p style="font-size:14px;color:#666;margin-bottom:12px;">
+    围挡不只是看的，要让人<strong>「停下来→掏出手机→扫码」</strong>。关键是怎么设计这个钩子。
+  </p>
+
+  <div class="scene-card">
+    <span class="tag idea">🎣 钩子一：收藏打卡送串串</span>
+    <p>
+    <strong>话术：</strong>「大众点评收藏本店 · 开业到店送招牌牛肉串10串（价值¥20）」<br>
+    <strong>执行：</strong>围挡上印大众点评店铺二维码，扫码即收藏。开业当天凭收藏记录到店领取。<br>
+    <strong>效果：</strong>围挡期预计能积累<strong>200-500个收藏</strong>，开业当天直接激活这批人。<br>
+    <strong>成本：</strong>几乎为零——串串食材成本低，10串牛肉成本约¥5-6
+    </p>
+  </div>
+
+  <div class="scene-card">
+    <span class="tag idea">🎣 钩子二：加群抽奖天天有</span>
+    <p>
+    <strong>话术：</strong>「扫码进群 · 每日抽奖送双人串串套餐（价值¥88）」<br>
+    <strong>执行：</strong>围挡上印微信群二维码，进群后每天上午10点发红包抽奖。<br>
+    每天抽1份双人套餐，中奖者开业当天来吃。<br>
+    没中奖的也进了群，开业当天群内通知。<br>
+    <strong>效果：</strong>围挡期预计加群<strong>300-500人</strong>，开业前群就已经有热度。<br>
+    <strong>成本：</strong>每天¥88食材成本 ≈ ¥35，30天约¥1,050
+    </p>
+  </div>
+
+  <div class="scene-card">
+    <span class="tag idea">🎣 钩子三：开业盲猜有奖</span>
+    <p>
+    <strong>话术：</strong>「猜中开业日期 · 免费吃双人套餐！」<br>
+    <strong>执行：</strong>围挡上印二维码→进入猜开业日期H5页面→猜中免费吃。<br>
+    每天限前10个猜中的人，制造紧迫感。<br>
+    即使没猜中也会收藏店铺或加群——这才是目的。<br>
+    <strong>效果：</strong>互动性强，容易引发转发传播。
+    </p>
+  </div>
+
+  <div class="scene-card">
+    <span class="tag idea">🎣 钩子四：朱姥爷烧烤联动</span>
+    <p>
+    <strong>话术：</strong>「朱姥爷烧烤推荐 · 开业凭此券享8折 · 就在同层」<br>
+    <strong>执行：</strong>在朱姥爷烧烤店门口放九巷围挡宣传立牌。<br>
+    朱姥爷的客人吃完烧烤，看到九巷即将开业，下次来吃串串。<br>
+    九巷开业后也可以反推朱姥爷，互相导流。<br>
+    <strong>效果：</strong>同商业体互相导流，1+1>2
+    </p>
+  </div>
+</div>
+
+<!-- 04 线上预热 -->
+<div class="scene" id="online">
+  <div class="scene-header"><span class="scene-num orange">04</span></div>
+  <h2 class="scene-title">线上预热 · <em>围挡不是孤立的，线上要一起打</em></h2>
+  <div class="s-divider"></div>
+
+  <div class="grid-2">
+    <div class="scene-card">
+      <span class="tag exec">🎵 抖音同城预热</span>
+      <p>
+      <strong>内容方向：</strong><br>
+      • 「生态城又开新店了！老成都串串装修中！」——拍围挡+汇金广场<br>
+      • 「九巷串串老板在干啥？」——装修进度vlog，每天10秒<br>
+      • 老成都串串科普：什么是好的串串锅底、什么竹签能看出来<br>
+      • 朱姥爷烧烤联动：老板说"隔壁要开串串了，以后吃完烧烤吃串串"<br><br>
+      <strong>投放：</strong>每条抖加¥50-100，定向生态城3公里
+      </p>
+    </div>
+    <div class="scene-card">
+      <span class="tag exec">📱 社群预热（围挡扫码进来的人）</span>
+      <p>
+      <strong>群内运营节奏：</strong><br>
+      • 每天上午发「装修进度照」——"今天装到xx了"<br>
+      • 每日抽奖（钩子二）——维持群活跃<br>
+      • 每周发一次"串串知识"——老成都锅底怎么做、鲜货怎么选<br>
+      • 开业倒计时7天开始：每天发开业福利预告<br>
+      • 开业前3天：群内专属开业优惠，"进群才能享"<br><br>
+      <strong>目标：</strong>围挡期结束时，群内保持<strong>300+活跃用户</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="highlight dark" style="margin-top:10px;">
+    <strong>📱 线上内容日历（围挡期）：</strong><br>
+    📅 周一：装修进度照+视频 → 周三：串串知识小课堂 → 周五：抽奖日 → 周日：下周开业预告<br>
+    <strong>核心原则：</strong>不要让群冷掉。每天至少一条内容，让群里的人觉得"这家店还没开业就这么用心，开业了一定要去尝尝"
+  </div>
+</div>
+
+<!-- 05 时间线 -->
+<div class="scene" id="timeline">
+  <div class="scene-header"><span class="scene-num dark">05</span></div>
+  <h2 class="scene-title">围挡期时间线 · <em>从围挡到开业一气呵成</em></h2>
+  <div class="s-divider gold"></div>
+
+  <div class="timeline">
+    <div class="tl-item dark">
+      <h4>📅 D-45 · 围挡上墙（装修开始）</h4>
+      <p>
+      ☑ 围挡设计定稿+制作安装（喷绘布+UV打印）<br>
+      ☑ 围挡上二维码就绪（大众点评收藏+微信群+猜开业H5）<br>
+      ☑ 抖音第一条：围挡上墙视频——"生态城要开老成都串串了！"<br>
+      ☑ 朱姥爷烧烤门口放九巷宣传立牌
+      </p>
+    </div>
+    <div class="tl-item red">
+      <h4>📅 D-30 · 线上预热启动</h4>
+      <p>
+      ☑ 围挡扫码开始积累：每天检查加群人数+收藏数<br>
+      ☑ 群内每日抽奖开始运行<br>
+      ☑ 抖音每周2-3条装修进度+串串科普<br>
+      ☑ 大众点评店铺注册+上架预览（先不上团购）<br>
+      ☑ 周边小区（青溪花苑、水木清华）宣传单页准备
+      </p>
+    </div>
+    <div class="tl-item gold">
+      <h4>📅 D-14 · 开业倒计时2周</h4>
+      <p>
+      ☑ 围挡更新开业倒计时（数字可更换）<br>
+      ☑ 群内开始发布开业福利预告<br>
+      ☑ 抖音发"老板试锅底"视频——炒料画面，香得很<br>
+      ☑ 大众点评上架团购套餐（单人¥39/双人¥88/四人¥168）<br>
+      ☑ 收集围挡期扫码数据：预计收藏300+、加群200+
+      </p>
+    </div>
+    <div class="tl-item dark">
+      <h4>📅 D-7 · 开业倒计时1周</h4>
+      <p>
+      ☑ 围挡上大字更新：「距开业仅剩7天」<br>
+      ☑ 群内发开业福利：「开业当天前50名到店，送牛肉串20串」<br>
+      ☑ 周边小区投放开业传单+海报<br>
+      ☑ 推广通预充+设置投放时段<br>
+      ☑ 抖加充值+准备开业当天视频素材
+      </p>
+    </div>
+    <div class="tl-item red">
+      <h4>📅 D-DAY · 开业当天</h4>
+      <p>
+      ☑ 围挡拆除→开业花篮+红毯+鞭炮/礼炮<br>
+      ☑ 群内发红包+通知开业<br>
+      ☑ 前50名到店送牛肉串20串（围挡期承诺兑现）<br>
+      ☑ 收藏打卡送小料（合规引导评价）<br>
+      ☑ 推广通上线投放·抖加上线开业视频<br>
+      ☑ 开业活动：充值当餐消费3倍→当餐5折（锁客）
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 06 预算 -->
+<div class="scene" id="budget">
+  <div class="scene-header"><span class="scene-num gold">06</span></div>
+  <h2 class="scene-title">围挡期预算 · <em>¥2,500搞定整个围挡营销</em></h2>
+  <div class="s-divider gold"></div>
+
+  <div class="budget-bar">
+    <div class="seg s1">围挡制作 30%</div>
+    <div class="seg s2">抽奖成本 25%</div>
+    <div class="seg s3">抖加投放 20%</div>
+    <div class="seg s4">物料设计 15%</div>
+    <div class="seg s5">传单海报 10%</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th style="width:22%;">项目</th><th style="width:13%;">预算</th><th>说明</th></tr>
+      <tr><td>🖼️ 围挡喷绘制作</td><td><strong>¥750</strong></td><td>按10㎡围挡算，含设计+安装</td></tr>
+      <tr><td>🎁 群内每日抽奖</td><td><strong>¥600</strong></td><td>每天1份双人套餐(≈¥35)×约17天</td></tr>
+      <tr><td>🎵 抖音抖加</td><td><strong>¥500</strong></td><td>围挡期投5-6条，每条¥80-100</td></tr>
+      <tr><td>🎨 设计物料</td><td><strong>¥400</strong></td><td>二维码设计+传单+海报+立牌设计打印</td></tr>
+      <tr><td>📄 传单海报</td><td><strong>¥250</strong></td><td>周边小区投放，打印500份</td></tr>
+      <tr><td><strong>💪 合计</strong></td><td><strong>¥2,500</strong></td><td>围挡期≈1.5个月，日均投入¥55</td></tr>
+    </table>
+  </div>
+
+  <div class="highlight gold" style="margin-top:10px;">
+    <strong>💰 ROI算账：</strong><br>
+    围挡期投入¥2,500，预计带来：<br>
+    • 大众点评收藏300-500个 → 按10%转化率 → 开业30-50单<br>
+    • 微信群300人 → 按20%转化率 → 开业60人<br>
+    • 抖音曝光2-3万次 → 按1%转化率 → 200-300人到店<br>
+    <strong>围挡期总投入¥2,500，预计为开业当天带来100-150人到店。人均消费¥60，开业当天营收¥6,000-9,000。ROI超过3倍。</strong>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  九巷老成都鲜货串串 · 围挡营销方案<br>
+  生态城·汇金广场 · 2026年6月
+</div>
+
+<script>
+const navLinks = document.querySelectorAll('nav a');
+const scenes = document.querySelectorAll('.scene');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, {rootMargin:'-80px 0px -50% 0px'});
+scenes.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
